@@ -12,47 +12,21 @@
 
     <nav id="navbar">
         <header id="header-nav">
-            <!-- <div class="logo-img"><img src="src/simulaplus_logo.png"></div> -->
             <div class="name-doc">
                 <h3> Documentación</h3>
             </div>
         </header>
-
         <ul>
-            <li>
-                <a href="#model-level" class="nav-link-title">
-                    Modelo de control de nivel
-                </a>
-                <ul>
-                    <li><a href="#section-11" class="nav-link">Introducción</a></li>
-                    <li><a href="#section-12" class="nav-link">Instalación</a></li>
-                    <li><a href="#section-13" class="nav-link">Métodos de control</a></li>
-                    <li><a href="#section-14" class="nav-link">Casos de uso</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#model-temp" class="nav-link-title">
-                    Modelo de control de temperatura
-                </a>
-                <ul>
-                    <li><a href="#section-21" class="nav-link">Introducción</a></li>
-                    <li><a href="#section-22" class="nav-link">Instalación</a></li>
-                    <li><a href="#section-23" class="nav-link">Métodos de control</a></li>
-                    <li><a href="#section-24" class="nav-link">Casos de uso</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#section-ref" class="nav-link-title">
-                    Referencias
-                </a>
-            </li>
+            <li><a href="#section-11" class="nav-link">Introducción</a></li>
+            <li><a href="#section-12" class="nav-link">Instalación</a></li>
+            <li><a href="#section-13" class="nav-link">Métodos de control</a></li>
+            <li><a href="#section-14" class="nav-link">Casos de uso</a></li>
+            <li><a href="#section-ref" class="nav-link-title">Referencias</a></li>
         </ul>
-
     </nav>
 
     <main id="main-doc">
         <div class="model-container">
-            <h3 id="model-level">Modelo de control de nivel</h3>
             <section class="main-section" id="section-11">
                 <header>Introducción</header>
                 <article>
@@ -91,203 +65,269 @@
                         <li><b>Procesador:</b> Intel o AMD x86-64 con soporte de instrucciones AVX2.</li>
                         <li><b>Video:</b> Soporte para OpenGL 3.3 recomendado con 1 GB en GPU.</li>
                     </ul>
-                    <figure class="doc-figure">
-                        <img src="src/level_changing_case.gif" alt="Secciones de la UI de LevelControlModel">
-                        <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
-                    </figure>
+                    
                     <p>
                         El procedimeinto de instalacion de la aplicación es el siguiente:
                     </p>
                     <ol>
-                        <li>Buscar el archivo de instalacion <em>NombredelArchivo</em> .</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>Localizar el archivo de instalación TankSim.exe, y ejecutarlo en modo administrador. NOTA: Dentro del archivo .rar con los archivos de instalación existe tres folders <i>“for_redistribution”</i>, <i>“for_distribution”</i>  y <i>“for_testing”</i>, el instalador con el ejecutable que incluye el Runtime es el folder <i>“for_redistribution”</i>.  </em> .</li>
+                        <li>Seleccionar la dirección de instalación de la aplicación, la dirección por defecto es <i>“C:\Archivos de programas\”</i> . En caso de colocar una nueva dirección colocar el nombre del folder contenedor que por defecto es <i>“\ESPOCH-IQ\”</i>.</li>
+                        <li>Instalar el Runtime de MATLAB, es aconsejable instalarlo en la dirección por defecto.</li>
+                        <li>Ejecutar instalación, en caso de que el Runtime esté instalado el proceso pasa la instalación de la aplicación directamente.</li>
+                        <li>Finalizar la instalación. En este punto se puede activar la opción de ejecutar el programa o abrir el archivo Log de instalación.</li>
+                        <li>En el caso de existir un problema en el proceso de instalación se recomienda desinstalar y volver a realizar el procedimiento desde el punto 1.</li>
                     </ol>
+                </article>
+            </section>
+            <section class="main-section" id="section-13">
+                <header>Funcionamiento de la aplicación</header>
+                <article>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                        Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                        Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                        La aplicación en su conjunto sigue la arquitectura mostrada en la figura YY. Este diagrama muestra como interacciona el usuario con las UI, y a su vez como esta interactúa con otros elementos de la aplicación.
+                    </p>
+                    <figure class="doc-diag">
+                        <img src="src/app_diag.jpg" alt="Arquitectura de la aplicacion">
+                        <figcaption>Figura 1. Pantalla principal de la aplicación LevelControlModel</figcaption>
+                    </figure>
+                    <p>
+                        El flujo de la información comienza en el usuario el cual proporciona datos para configurar el caso de simulación. Estos datos se ingresan a través de la UI, mediante campos disponibles en la aplicación. Estos datos se convierten en parámetros con los se configura un modelo de Simulink, que devuelve como resultados los valores de las variables configuradas dentro de cada modelo como salidas. Estas salidas son ordenadas y presentadas en la interface gráfica mediante diagramas o tabas de resultados. El otro flujo de información se da cuando el usuario desea guardar la configuración de un caso en la base de datos de la aplicación. Los registros ingresan como datos que se acumulan o apilan en tablas construidas en archivos de Excel. La aplicación también permite borrar casos; existen casos que están guardados por defecto en la base de datos que no se pueden eliminar.
                     </p>
                 </article>
             </section>
             <section class="main-section" id="section-13">
-                <header>Métodos de control</header>
+                <header>Interface gráfica de usuario</header>
                 <article>
+                    <p>
+                        La interface de la aplicación TankSim, consta de 2 ventanas principales de simulación la primera muestra los controles de configuración y ejecución de la simulación de control de nivel de fluido en un tanque. La segunda por su parte muestra el control de temperatura del mismo tanque. La segunda ventana solo puede ejecutarse solo cuando existan resultados en la aplicación de control de nivel.
+                    </p>
+                
+                    <p>
+                        Las interfaces gráficas de la aplicación siguen la distribución mostrada en la figura YY. Es una distribución horizontal que tiene dos áreas definidas. Un bloque columna con los controles de configuración del caso de simulación (A) y un segundo bloque columna con los controles que manejan los resultados, configuración de control y base de datos (B).
+                    </p>
                     <figure class="doc-figure">
                         <img src="src/panel_explanation.png" alt="Secciones de la UI de LevelControlModel">
                         <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
                     </figure>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
-                        Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
-                        Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
-                        Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar datos, ejecutar acciones y mostrar resultados. La primera sección 
                     </p>
-                    <figure class="doc-figure">
-                        <img src="src/level_changing_control.gif" alt="Secciones de la UI de LevelControlModel">
+                </article>
+            </section>
+            <section class="main-section" id="section-13">
+                <header>Flujo del proceso de simulación</header>
+                <article>
+                    <p>
+                        El proceso de simulación sigue el diagrama mostrado en la figura YY El proceso inicia cuando se ejecuta la UI de control de nivel, que posee cinco modelos con los que se puede trabajar en el control de nivel de fluido. Entre los modelos implementados se encuentran:
+                    </p>
+                    <p>
+                        Para el control de nivel:
+                    </p>
+                    <ul>
+                        <li>Modelo sin sistema de control (LevelControlModelBase) [NOCONT]</li>
+                        <li>Modelo con control PID en la entrada (LevelControlModelPidInput) [PIDIN]</li>
+                        <li>Modelo con control PID en la salida (LevelControlModelPidOutput) [PIDOUT]</li>
+                        <li>Modelo con control ON/OFF en la entrada (LevelControlModelOnoffInput) [ONOFFIN]</li>
+                        <li>Modelo con control ON/OFF en la salida (LevelControlModelOnoffOutput) [ONOFFOUT]</li>
+                    </ul>
+                    <p>
+                        Para el control de nivel:
+                    </p>
+                    <ul>
+                        <li>Modelo sin sistema de control (TemperatureControlModelBase) [NOCONT]</li>
+                        <li>Modelo con control PID en la entrada (TemperatureControlModelPIDInput) [PIDIN]</li>
+                        <li>Modelo con control ON/OFF en la entrada (TemperatureControlModelOnoffInput) [ONOFFIN]</li>
+                    </ul>
+                    <figure class="flow-diag" >
+                        <img src="src/flow_diag.jpg" alt="Secciones de la UI de LevelControlModel">
                         <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
                     </figure>
+                </article>
+            </section>
+            <section class="main-section" id="section-13">
+                <header>Control de nivel de fluido</header>
+                <article>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
-                        Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
-                        Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
-                        Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                        El flujo del proceso empieza con la aplicación LevelControlModelUI, que ejecuta la simulación de los distintos modelos de proceso para el control de nivel de fluido (5 modelos diferentes). El proceso es el siguiente:
                     </p>
+                    
+                    <ol>
+                        <li>La aplicación TankSim V1.0 ejecuta la UI LevelControlModelUI y permite al usuario interactuar con los distintos controles y con la base de datos de casos. El usuario selecciona un caso por defecto o guardado, o por el contrario edita los parámetros del modelo y genera un nuevo caso. Los usuarios además deben escoger el tipo de control a aplicar (PIDIN, PIDOUT, ONOFFIN, ONOFFOUT y NOCONT). Luego en el menú dropdown se listan los casos almacenados en la base de datos para ese tipo de control. Seleccionando una de las opciones los parámetros se cargan en la tabla de parámetros. NOTA: Estos parámetros se pueden guardar en la base datos de casos asignándole un nombre (ver Sección Guardar y eliminar casos de estudio).</li>
+                        <li>Cuando el usuario esta seguro de haber configurado de forma adecuada los parámetros del modelo, se presiona el botón SIMULAR, para correr el modelo. El botón procede a bloquearse para no permitir presionar varias veces, para evitar generar un error por doble ejecución del modelo. NOTA: El tiempo que tarde la aplicación en obtener resultados depende de las especificaciones del computador en el que se ejecuta la aplicación. Por lo general suele estar por debajo de los 60 segundos.</li>
+                            <ul>
+                                <li>Cuando el modelo ejecuta la simulación recoge los datos de los controles donde están asignados, construye una estructura params que se pasa como argumento a los distintos modelos de Simulink.</li>
+                                <li>Los modelos de Simulink se ejecutan con los parámetros pasados por la UI, y devuelven una estructura out (simOut), con los resultados de la simulación. Dependiendo del modelo se tiene diferentes estructuras de los resultados.</li>
+                            </ul>
+                            <table class="doc-table center">
+                                <caption>Tabla de contenido</caption>
+                                <tbody>
+                                    <tr>
+                                        <th>PIDIN</th>
+                                        <th>PIDOUT</th>
+                                        <th>ONOFFIN</th>
+                                        <th>ONOFFOUT</th>
+                                        <th>NOCONT</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <li>Los resultados se grafican en los UIAxes de la aplicación (ver código fuente).</li>
+                        <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener resultados en la UI LevelControlModelUI.</li>
+                    </ol>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                        Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                        Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar datos, ejecutar acciones y mostrar resultados. La primera sección 
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="section-13">
+                <header>Control de temperatura</header>
+                <article>
+                    <ol>
+                        <li>Con los resultados obtenidos del control de nivel de fluido se puede continuar con la aplicación de control de temperatura. Para ejecutar la aplicación de control de temperatura se usa el botón “Modelo Temperatura >>>”. Este botón migra los parámetros compartidos entre los dos modelos y ejecuta la UI TemperatureControlModelUI.</li>
+                        <li>Cuando la UI se ejecuta el usuario tiene las mismas funcionalidades que con la aplicación de control de nivel: configuración de parámetros de modelo, ejecución de casos de estudio y base de datos para casos de estudio. </li> 
+                        <li>Cuando los parámetros se encuentran configurados de tal forma que refleje las intenciones del usuario, este puede guardar el caso o ejecutarlo.</li>
+                        <table class="doc-table center">
+                            <caption>Tabla de contenido</caption>
+                            <tbody>
+                                <tr>
+                                    <th>NOCONT</th>
+                                    <th>PIDIN</th>
+                                    <th>ONOFFIN</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <li>Los resultados se grafican en los UIAxe de la aplicación (ver código fuente).</li>
+                        <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener resultados en la UI LevelControlModelUI.</li>
+                    </ol>
+                    <p>
+                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar datos, ejecutar acciones y mostrar resultados. La primera sección 
                     </p>
                 </article>
             </section>
             <section class="main-section" id="section-14">
-                <header>Casos de uso</header>
+                <header>Casos de estudio</header>
                 <article>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
-                        Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
-                        Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
-                        Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
-                    </p>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
-                        Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
-                        Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
-                        Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                        Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                        Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
-                    </p>
+                   <ul>
+                        <li>Control de nivel de fluido</li>
+                            <h4>Caso de estudio 1 – Control de nivel de fluido [NOCONT]</h4>
+                            <p>A un tanque cilíndrico de 8 metros cúbicos que almacena una solución salida, se le instalan dos válvulas con coeficientes de flujo de 86 m3/h bar en la entrada y 53 m3/h bar en la salida. El tanque funciona correctamente hasta que un fallo en la válvula de entrada genera una perturbación que lo saca del estado estacionario. El tanque no tiene sistema de control, pero se encontraba ajustado manualmente para mantener el nivel de fluido constante.</p>
+                            <h5>Tiempo de simulación:</h5>
+                            <p>Se desea simular el proceso para un tiempo de 12 horas.</p>
+                            <h5>Perturbación:</h5>
+                            <p>La válvula de entrada se encontraba abierta en un 60% de su apertura total al inicio del proceso. Pero a partir del tiempo 6 horas, la válvula sufre una avería que hace que se abra y cierre en un 17% desde su valor inicial. El periodo del pulso generado es de 0.5 horas con un ancho de flujo del 50%.</p>
+                            <h5>Acción de control: </h5>
+                            <p>El operario encargado del tanque intenta controlar el nivel de fluido de forma manual abriendo la válvula de salida del tanque 0.05 horas después de que la válvula de entrada sufra la avería. Abre la válvula desde un 30% hasta un 40%, intentando igualar el movimiento de la apertura de la válvula de entrada. El resultado es un pulso de 0.52 horas con un ancho de pulso de 50%.</p>
+                            <p>Con los datos indicados determine los siguientes literales:</p>
+                            <ol>
+                                <li>Obtenga los resultados dinámicos del nivel de fluido dentro del tanque.</li>
+                                <li>¿El proceso está bajo control o existe un desbordamiento tomando en cuenta que el tanque tiene una altura de 4,5 metros?</li>
+                                <li>¿Es correcta la acción de control realizada por el operador?</li>
+                                <li>¿Es controlable el proceso?</li>
+                            </ol>
+
+                            <h4>Caso de estudio 2 – Control de nivel de fluido [PIDOUT]</h4>
+                            <p>Como consecuencia del fallo en el tanque del caso de estudio 1 de nivel de fluido, se decide instalar un sistema de control PID, con acción de control sobre la válvula de salida del tanque. La válvula de control instalada tiene el mismo coeficiente de flujo (53 m m3/h) y se instala una válvula de entrada con el mismo coeficiente. El ajuste del controlador PID, tiene las siguientes constantes:</p>
+                            <p>Durante la prueba del controlador se manipulo apertura de la válvula de entrada bajo las mismas condiciones del pulso anterior (falla).</p>
+                            <h5>Tiempo de simulación:</h5>
+                            <p>Se desea simular el proceso para un tiempo de 12 horas.</p>
+                            <h5>Perturbación:</h5>
+                            <p>Se repite la perturbación de fallo del caso 1.</p>
+                            <h5>Acción de control:</h5>
+                            <p>Ajustado por el controlador PID.</p>
+                            <p>Con los datos indicados determine los siguientes literales:</p>
+                            <ol>
+                                <li>Obtenga los resultados dinámicos del nivel de fluido dentro del tanque.</li>
+                                <li>¿El proceso está bajo control o existe un desbordamiento tomando en cuenta que el tanque tiene una altura de 4,5 metros?</li>
+                                <li>¿Controla correctamente el nivel de fluido el controlador PID?</li>
+                            </ol>
+
+                            <h4>Caso de estudio 3 – Control de nivel de fluido [PIDIN]</h4>
+
+                            <h4>Caso de estudio 4 – Control de nivel de fluido [ONOFFIN]</h4>
+                            <h4>Caso de estudio 5 – Control de nivel de fluido [ONOFFOUT]</h4>
+                        <li>Control de temperatura</li>
+                            <h4>Caso de estudio 1 – Control de temperatura de fluido [NOCONT]</h4>
+                            <h4>Caso de estudio 3 – Control de temperatura de fluido [PIDIN]</h4>
+                            <h4>Caso de estudio 4 – Control de temperatura de fluido [ONOFFIN]</h4>
+                   </ul>
+                </article>
+            </section>
+            <section class="main-section" id="section-ref">
+                <header>Referencias</header>
+                <article>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </article>
             </section>
         </div>
-        <div class="model-container">
-                <h3 id="model-temp">Modelo de control de temperatura</h3>
-                <section class="main-section" id="section-21">
-                    <header>Introducción</header>
-                    <article>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
-                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
-                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
-                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
-                        </p>
-                        <figure class="doc-figure">
-                            <img src="src/temp_model_img001.png" alt="Pantalla principal de la aplicacion LevelControlModel">
-                            <figcaption>Figura 1. Pantalla principal de la aplicación TenperatureControlModel</figcaption>
-                        </figure>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
-                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
-                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
-                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
-                        </p>
-                    </article>
-                </section>
-                <section class="main-section" id="section-22">
-                    <header>Instalación</header>
-                    <article>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
-                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
-                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
-                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
-                        </p>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
-                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
-                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
-                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
-                        </p>
-                    </article>
-                </section>
-                <section class="main-section" id="section-23">
-                    <header>Métodos de control</header>
-                    <article>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
-                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
-                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
-                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
-                        </p>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
-                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
-                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
-                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
-                        </p>
-                    </article>
-                </section>
-                <section class="main-section" id="section-24">
-                    <header>Casos de uso</header>
-                    <article>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
-                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
-                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
-                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
-                        </p>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
-                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
-                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
-                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
-                        </p>
-                    </article>
-                </section>
-                
-            </div>
-            <div class="referencias">
-                <section class="main-section" id="section-ref">
-                    <header>Referencias</header>
-                    <article>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
-                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
-                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
-                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
-                        </p>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
-                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
-                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
-                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
-                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
-                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
-                        </p>
-                    </article>
-                </section>
-            </div>
     </main>
 
 </body>

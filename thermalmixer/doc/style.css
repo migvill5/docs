@@ -15,7 +15,7 @@ body {
   min-width: 320px;
   color: var(--color-text);
   background-color: var(--color-isabelline);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   line-height: 1.2;
 }
 
@@ -92,7 +92,8 @@ section article {
 }
 
 .doc-figure,
-.doc-equation {
+.doc-equation,
+.flow-diag {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,4 +102,36 @@ section article {
 .doc-figure img {
   width: 700px;
   height: 420px;
+}
+
+.doc-diag img {
+  width: 700px;
+  height: 280px;
+}
+
+.flow-diag img {
+  width: 620px;
+  height: auto;
+}
+
+td,
+th {
+  width: 4rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background: lightblue;
+  border-color: white;
+}
+
+body {
+  padding: 1rem;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
