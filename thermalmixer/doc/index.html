@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    </script>
+    <title>Documentation</title>
+</head>
+<body>
+
+    <nav id="navbar">
+        <header id="header-nav">
+            <!-- <div class="logo-img"><img src="src/simulaplus_logo.png"></div> -->
+            <div class="name-doc">
+                <h3> Documentación</h3>
+            </div>
+        </header>
+
+        <ul>
+            <li>
+                <a href="#model-level" class="nav-link-title">
+                    Modelo de control de nivel
+                </a>
+                <ul>
+                    <li><a href="#section-11" class="nav-link">Introducción</a></li>
+                    <li><a href="#section-12" class="nav-link">Instalación</a></li>
+                    <li><a href="#section-13" class="nav-link">Métodos de control</a></li>
+                    <li><a href="#section-14" class="nav-link">Casos de uso</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#model-temp" class="nav-link-title">
+                    Modelo de control de temperatura
+                </a>
+                <ul>
+                    <li><a href="#section-21" class="nav-link">Introducción</a></li>
+                    <li><a href="#section-22" class="nav-link">Instalación</a></li>
+                    <li><a href="#section-23" class="nav-link">Métodos de control</a></li>
+                    <li><a href="#section-24" class="nav-link">Casos de uso</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#section-ref" class="nav-link-title">
+                    Referencias
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="main-doc">
+        <div class="model-container">
+            <h3 id="model-level">Modelo de control de nivel</h3>
+            <section class="main-section" id="section-11">
+                <header>Introducción</header>
+                <article>
+                    <p>
+                        LevelControlModel es una aplicación desarrollada con el uso de MATLAB/Simulink, que permite simular el proceso de llenado de un tanque de agua. El modelo matemático está basado en funciones de transferencia que requieren ciertos parámetros para representar proceso, como: Área transversal del depósito, coeficientes de válvulas, condiciones iniciales y perturbaciones. En la figura 1 se observa la pantalla principal de la aplicación. 
+                    </p>
+                    <figure class="doc-figure">
+                        <img src="src/level_model_img001.png" alt="Pantalla principal de la aplicacion LevelControlModel">
+                        <figcaption>Figura 1. Pantalla principal de la aplicación LevelControlModel</figcaption>
+                    </figure>
+                    <p>
+                        Lo primera parte del desarrollo del modelo matemático fue obtener las ecuaciones que representan el modelo en base a funciones de transferencia. En el caso de este modelo de llenado de tanque se obtuvo una única ecuación con el grado de apertura de válvula, como variables de entrada. 
+                    </p>
+                    <figure class="doc-equation">
+                        <img src="src/ec1.gif" alt="Ecuación modelo control de nivel">
+                    </figure>
+                    <p>
+                        Como se muestra en la ecuación el flujo de entrada es regulado por una válvula de comportamiento lineal, es decir el coeficiente de flujo es independiente de la presión. Mientras que la salida es controlada por una válvula que es afectada por la presión de columna de fluido (no lineal). 
+                    </p>
+                    <p>
+                        Esta ecuación se modeló usando Simulink para ejecutar el modelo pasándole los parámetros de ajuste a través de una interface grafica (App designer). Como el objetivo final de esta aplicación es su uso por parte estudiantes en la catedra de Control de Procesos, se desarrollo variantes de este modelo que permiten estudiar su comportamiento en el caso de: no tener ningún control, control PID y control ON/OFF. Posteriormente se explica con mayor detalle las variantes de modelo desarrolladas, y como se utilizan en la aplicación.
+                    </p>
+                                        
+                </article>
+            </section>
+            <section class="main-section" id="section-12">
+                <header>Instalación</header>
+                <article>
+                    <p>
+                        Para instalar la versión standalone de la aplicacion LevelControlModel se requiere cumplir con ciertos requiesitos minimo para ejecutarla. En el caso que se quiera utilizar un computador que no cumpla con los requisitos minimos el instalador no impedira la instalacion, es desición del usuario proceder. Se suguiere para el correcto funcionamiento de la aplicación complir con los siguientes requisitos mínimos:
+                    </p>
+                    <ul>
+                        <li><b>Sistema operativo:</b> Microsoft Windows 7, 8 o 10</li>
+                        <li><b>Capacidad:</b> 20 GB HDD o SSD</li>
+                        <li><b>Memoria RAM:</b> 4GB DDR3</li>
+                        <li><b>Procesador:</b> Intel o AMD x86-64 con soporte de instrucciones AVX2.</li>
+                        <li><b>Video:</b> Soporte para OpenGL 3.3 recomendado con 1 GB en GPU.</li>
+                    </ul>
+                    <figure class="doc-figure">
+                        <img src="src/level_changing_case.gif" alt="Secciones de la UI de LevelControlModel">
+                        <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
+                    </figure>
+                    <p>
+                        El procedimeinto de instalacion de la aplicación es el siguiente:
+                    </p>
+                    <ol>
+                        <li>Buscar el archivo de instalacion <em>NombredelArchivo</em> .</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                        Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                        Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="section-13">
+                <header>Métodos de control</header>
+                <article>
+                    <figure class="doc-figure">
+                        <img src="src/panel_explanation.png" alt="Secciones de la UI de LevelControlModel">
+                        <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
+                    </figure>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
+                        Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
+                        Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
+                        Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                    </p>
+                    <figure class="doc-figure">
+                        <img src="src/level_changing_control.gif" alt="Secciones de la UI de LevelControlModel">
+                        <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
+                    </figure>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
+                        Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
+                        Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
+                        Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                        Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                        Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="section-14">
+                <header>Casos de uso</header>
+                <article>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
+                        Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
+                        Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
+                        Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                    </p>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
+                        Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
+                        Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
+                        Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                        Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                        Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                    </p>
+                </article>
+            </section>
+        </div>
+        <div class="model-container">
+                <h3 id="model-temp">Modelo de control de temperatura</h3>
+                <section class="main-section" id="section-21">
+                    <header>Introducción</header>
+                    <article>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
+                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
+                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
+                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                        </p>
+                        <figure class="doc-figure">
+                            <img src="src/temp_model_img001.png" alt="Pantalla principal de la aplicacion LevelControlModel">
+                            <figcaption>Figura 1. Pantalla principal de la aplicación TenperatureControlModel</figcaption>
+                        </figure>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
+                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
+                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
+                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                        </p>
+                    </article>
+                </section>
+                <section class="main-section" id="section-22">
+                    <header>Instalación</header>
+                    <article>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
+                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
+                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
+                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                        </p>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
+                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
+                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
+                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                        </p>
+                    </article>
+                </section>
+                <section class="main-section" id="section-23">
+                    <header>Métodos de control</header>
+                    <article>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
+                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
+                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
+                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                        </p>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
+                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
+                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
+                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                        </p>
+                    </article>
+                </section>
+                <section class="main-section" id="section-24">
+                    <header>Casos de uso</header>
+                    <article>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
+                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
+                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
+                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                        </p>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
+                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
+                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
+                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                        </p>
+                    </article>
+                </section>
+                
+            </div>
+            <div class="referencias">
+                <section class="main-section" id="section-ref">
+                    <header>Referencias</header>
+                    <article>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, cum maxime nihil sed et itaque debitis fugiat molestiae ipsum delectus officia optio ullam, impedit, unde laborum? Provident voluptatum ipsam quam!
+                            Nulla facilis fugiat voluptates, enim accusamus eligendi possimus reprehenderit, vero tenetur veniam labore nisi asperiores dolorum ipsum officia. Laboriosam necessitatibus maiores laudantium veritatis placeat sunt voluptas nulla quos rem labore.
+                            Recusandae architecto voluptas dolores non possimus voluptatibus nemo iusto quos assumenda, earum similique. Mollitia, quia, maxime minima soluta praesentium beatae animi sit quis ullam labore veritatis error corrupti culpa similique.
+                            Sunt earum soluta perspiciatis tempora vitae. Accusantium reprehenderit voluptatem, aspernatur consectetur voluptatibus similique earum assumenda mollitia quae fuga nemo, in iste saepe beatae id sit doloribus? Quia ipsam rem labore!
+                        </p>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam impedit quas tenetur illo autem nihil aspernatur excepturi quis doloribus dignissimos voluptates, architecto ad eveniet, temporibus numquam, soluta placeat perferendis?
+                            Eveniet iusto ullam excepturi quas debitis labore corporis quasi asperiores facere possimus aliquam aspernatur impedit eligendi minus ex distinctio unde, nobis ut. Fuga, eligendi? Accusantium blanditiis animi distinctio perspiciatis eius!
+                            Possimus beatae soluta ipsam veniam repellat incidunt sit. Ab velit nesciunt ratione neque dolor vero est aperiam ea eligendi. Temporibus harum assumenda et pariatur consequatur quam quas. Sit, maiores inventore.
+                            Ut, quos reprehenderit tempore asperiores ullam perferendis unde eum minima itaque omnis voluptatem laudantium facilis, reiciendis incidunt exercitationem tempora repudiandae mollitia excepturi fugiat, similique obcaecati non optio quas! Sed, veniam?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, nisi perspiciatis ipsum a nihil aperiam ea sapiente saepe possimus ipsam quaerat repudiandae pariatur molestias nam at! Magni alias mollitia amet?
+                            Cumque nihil ratione tenetur rem veniam consequuntur reiciendis explicabo. Illo, tenetur. Eius nulla necessitatibus suscipit, recusandae quidem voluptas, consequatur, veritatis dolorem ad possimus quibusdam excepturi. Soluta sed corrupti deleniti a.
+                            Illum temporibus aperiam provident, repudiandae quae eveniet laboriosam, consectetur, accusantium asperiores dignissimos magnam qui reprehenderit! A quibusdam facilis nulla expedita velit dicta excepturi nisi dolorem rerum nihil suscipit, est culpa.
+                        </p>
+                    </article>
+                </section>
+            </div>
+    </main>
+
+</body>
+</html>
