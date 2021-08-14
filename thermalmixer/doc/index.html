@@ -13,21 +13,25 @@
     <nav id="navbar">
         <header id="header-nav">
             <div class="name-doc">
-                <h3> Documentación</h3>
+                <h3>TankSim V1.0</h3>
             </div>
         </header>
         <ul>
-            <li><a href="#section-11" class="nav-link">Introducción</a></li>
-            <li><a href="#section-12" class="nav-link">Instalación</a></li>
-            <li><a href="#section-13" class="nav-link">Métodos de control</a></li>
-            <li><a href="#section-14" class="nav-link">Casos de uso</a></li>
+            <li><a href="#introduction" class="nav-link">Introducción</a></li>
+            <li><a href="#installation" class="nav-link">Instalación</a></li>
+            <li><a href="#how-the-application-works" class="nav-link">Funcionamiento de la aplicacion</a></li>
+            <li><a href="#ui-interface" class="nav-link">Interface grafica</a></li>
+            <li><a href="#simulation-process" class="nav-link">Proceso de simulacion</a></li>
+            <li><a href="#fluid-level-control-process" class="nav-link">Control de nivel de fluido</a></li>
+            <li><a href="#temperature-control-process" class="nav-link">Control de temperatura</a></li>
+            <li><a href="#study-cases" class="nav-link">Casos de estudio</a></li>
             <li><a href="#section-ref" class="nav-link-title">Referencias</a></li>
         </ul>
     </nav>
 
     <main id="main-doc">
         <div class="model-container">
-            <section class="main-section" id="section-11">
+            <section class="main-section" id="introduction">
                 <header>Introducción</header>
                 <article>
                     <p>
@@ -52,11 +56,11 @@
                                         
                 </article>
             </section>
-            <section class="main-section" id="section-12">
+            <section class="main-section" id="installation">
                 <header>Instalación</header>
                 <article>
                     <p>
-                        Para instalar la versión standalone de la aplicacion LevelControlModel se requiere cumplir con ciertos requiesitos minimo para ejecutarla. En el caso que se quiera utilizar un computador que no cumpla con los requisitos minimos el instalador no impedira la instalacion, es desición del usuario proceder. Se suguiere para el correcto funcionamiento de la aplicación complir con los siguientes requisitos mínimos:
+                        Para instalar la versión standalone de la aplicación LevelControlModel se requiere cumplir con ciertos requiesitos minimo para ejecutarla. En el caso que se quiera utilizar un computador que no cumpla con los requisitos minimos el instalador no impedira la instalacion, es desición del usuario proceder. Se suguiere para el correcto funcionamiento de la aplicación complir con los siguientes requisitos mínimos:
                     </p>
                     <ul>
                         <li><b>Sistema operativo:</b> Microsoft Windows 7, 8 o 10</li>
@@ -79,7 +83,7 @@
                     </ol>
                 </article>
             </section>
-            <section class="main-section" id="section-13">
+            <section class="main-section" id="how-the-application-works">
                 <header>Funcionamiento de la aplicación</header>
                 <article>
                     <p>
@@ -94,7 +98,7 @@
                     </p>
                 </article>
             </section>
-            <section class="main-section" id="section-13">
+            <section class="main-section" id="ui-interface">
                 <header>Interface gráfica de usuario</header>
                 <article>
                     <p>
@@ -113,8 +117,8 @@
                     </p>
                 </article>
             </section>
-            <section class="main-section" id="section-13">
-                <header>Flujo del proceso de simulación</header>
+            <section class="main-section" id="simulation-process">
+                <header>Proceso de simulación</header>
                 <article>
                     <p>
                         El proceso de simulación sigue el diagrama mostrado en la figura YY El proceso inicia cuando se ejecuta la UI de control de nivel, que posee cinco modelos con los que se puede trabajar en el control de nivel de fluido. Entre los modelos implementados se encuentran:
@@ -143,7 +147,7 @@
                     </figure>
                 </article>
             </section>
-            <section class="main-section" id="section-13">
+            <section class="main-section" id="fluid-level-control-process">
                 <header>Control de nivel de fluido</header>
                 <article>
                     <p>
@@ -157,7 +161,7 @@
                                 <li>Cuando el modelo ejecuta la simulación recoge los datos de los controles donde están asignados, construye una estructura params que se pasa como argumento a los distintos modelos de Simulink.</li>
                                 <li>Los modelos de Simulink se ejecutan con los parámetros pasados por la UI, y devuelven una estructura out (simOut), con los resultados de la simulación. Dependiendo del modelo se tiene diferentes estructuras de los resultados.</li>
                             </ul>
-                            <table class="doc-table center">
+                            <!-- <table class="doc-table center">
                                 <caption>Tabla de contenido</caption>
                                 <tbody>
                                     <tr>
@@ -203,7 +207,7 @@
                                         <td></td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table> -->
                         <li>Los resultados se grafican en los UIAxes de la aplicación (ver código fuente).</li>
                         <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener resultados en la UI LevelControlModelUI.</li>
                     </ol>
@@ -212,14 +216,14 @@
                     </p>
                 </article>
             </section>
-            <section class="main-section" id="section-13">
+            <section class="main-section" id="temperature-control-process">
                 <header>Control de temperatura</header>
                 <article>
                     <ol>
                         <li>Con los resultados obtenidos del control de nivel de fluido se puede continuar con la aplicación de control de temperatura. Para ejecutar la aplicación de control de temperatura se usa el botón “Modelo Temperatura >>>”. Este botón migra los parámetros compartidos entre los dos modelos y ejecuta la UI TemperatureControlModelUI.</li>
                         <li>Cuando la UI se ejecuta el usuario tiene las mismas funcionalidades que con la aplicación de control de nivel: configuración de parámetros de modelo, ejecución de casos de estudio y base de datos para casos de estudio. </li> 
                         <li>Cuando los parámetros se encuentran configurados de tal forma que refleje las intenciones del usuario, este puede guardar el caso o ejecutarlo.</li>
-                        <table class="doc-table center">
+                        <!-- <table class="doc-table center">
                             <caption>Tabla de contenido</caption>
                             <tbody>
                                 <tr>
@@ -253,7 +257,7 @@
                                     <td></td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> -->
                         <li>Los resultados se grafican en los UIAxe de la aplicación (ver código fuente).</li>
                         <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener resultados en la UI LevelControlModelUI.</li>
                     </ol>
@@ -262,7 +266,7 @@
                     </p>
                 </article>
             </section>
-            <section class="main-section" id="section-14">
+            <section class="main-section" id="study-cases">
                 <header>Casos de estudio</header>
                 <article>
                    <ul>
@@ -300,7 +304,6 @@
                             </ol>
 
                             <h4>Caso de estudio 3 – Control de nivel de fluido [PIDIN]</h4>
-
                             <h4>Caso de estudio 4 – Control de nivel de fluido [ONOFFIN]</h4>
                             <h4>Caso de estudio 5 – Control de nivel de fluido [ONOFFOUT]</h4>
                         <li>Control de temperatura</li>
