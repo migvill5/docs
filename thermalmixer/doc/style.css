@@ -93,6 +93,7 @@ section article {
 
 .doc-figure,
 .doc-equation,
+.doc-diag,
 .flow-diag {
   display: flex;
   flex-direction: column;
@@ -106,7 +107,7 @@ section article {
 
 .doc-diag img {
   width: 700px;
-  height: 280px;
+  height: auto;
 }
 
 .flow-diag img {

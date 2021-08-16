@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     </script>
     <title>Documentation</title>
 </head>
+
 <body>
 
     <nav id="navbar">
@@ -35,32 +37,50 @@
                 <header>Introducción</header>
                 <article>
                     <p>
-                        LevelControlModel es una aplicación desarrollada con el uso de MATLAB/Simulink, que permite simular el proceso de llenado de un tanque de agua. El modelo matemático está basado en funciones de transferencia que requieren ciertos parámetros para representar proceso, como: Área transversal del depósito, coeficientes de válvulas, condiciones iniciales y perturbaciones. En la figura 1 se observa la pantalla principal de la aplicación. 
+                        LevelControlModel es una aplicación desarrollada con el uso de MATLAB/Simulink, que permite
+                        simular el proceso de llenado de un tanque de agua. El modelo matemático está basado en
+                        funciones de transferencia que requieren ciertos parámetros para representar proceso, como: Área
+                        transversal del depósito, coeficientes de válvulas, condiciones iniciales y perturbaciones. En
+                        la figura 1 se observa la pantalla principal de la aplicación.
                     </p>
                     <figure class="doc-figure">
-                        <img src="src/level_model_img001.png" alt="Pantalla principal de la aplicacion LevelControlModel">
+                        <img src="src/level_model_img001.png"
+                            alt="Pantalla principal de la aplicacion LevelControlModel">
                         <figcaption>Figura 1. Pantalla principal de la aplicación LevelControlModel</figcaption>
                     </figure>
                     <p>
-                        Lo primera parte del desarrollo del modelo matemático fue obtener las ecuaciones que representan el modelo en base a funciones de transferencia. En el caso de este modelo de llenado de tanque se obtuvo una única ecuación con el grado de apertura de válvula, como variables de entrada. 
+                        Lo primera parte del desarrollo del modelo matemático fue obtener las ecuaciones que representan
+                        el modelo en base a funciones de transferencia. En el caso de este modelo de llenado de tanque
+                        se obtuvo una única ecuación con el grado de apertura de válvula, como variables de entrada.
                     </p>
                     <figure class="doc-equation">
                         <img src="src/ec1.gif" alt="Ecuación modelo control de nivel">
                     </figure>
                     <p>
-                        Como se muestra en la ecuación el flujo de entrada es regulado por una válvula de comportamiento lineal, es decir el coeficiente de flujo es independiente de la presión. Mientras que la salida es controlada por una válvula que es afectada por la presión de columna de fluido (no lineal). 
+                        Como se muestra en la ecuación el flujo de entrada es regulado por una válvula de comportamiento
+                        lineal, es decir el coeficiente de flujo es independiente de la presión. Mientras que la salida
+                        es controlada por una válvula que es afectada por la presión de columna de fluido (no lineal).
                     </p>
                     <p>
-                        Esta ecuación se modeló usando Simulink para ejecutar el modelo pasándole los parámetros de ajuste a través de una interface grafica (App designer). Como el objetivo final de esta aplicación es su uso por parte estudiantes en la catedra de Control de Procesos, se desarrollo variantes de este modelo que permiten estudiar su comportamiento en el caso de: no tener ningún control, control PID y control ON/OFF. Posteriormente se explica con mayor detalle las variantes de modelo desarrolladas, y como se utilizan en la aplicación.
+                        Esta ecuación se modeló usando Simulink para ejecutar el modelo pasándole los parámetros de
+                        ajuste a través de una interface grafica (App designer). Como el objetivo final de esta
+                        aplicación es su uso por parte estudiantes en la catedra de Control de Procesos, se desarrollo
+                        variantes de este modelo que permiten estudiar su comportamiento en el caso de: no tener ningún
+                        control, control PID y control ON/OFF. Posteriormente se explica con mayor detalle las variantes
+                        de modelo desarrolladas, y como se utilizan en la aplicación.
                     </p>
-                                        
+
                 </article>
             </section>
             <section class="main-section" id="installation">
                 <header>Instalación</header>
                 <article>
                     <p>
-                        Para instalar la versión standalone de la aplicación LevelControlModel se requiere cumplir con ciertos requiesitos minimo para ejecutarla. En el caso que se quiera utilizar un computador que no cumpla con los requisitos minimos el instalador no impedira la instalacion, es desición del usuario proceder. Se suguiere para el correcto funcionamiento de la aplicación complir con los siguientes requisitos mínimos:
+                        Para instalar la versión standalone de la aplicación LevelControlModel se requiere cumplir con
+                        ciertos requiesitos minimo para ejecutarla. En el caso que se quiera utilizar un computador que
+                        no cumpla con los requisitos minimos el instalador no impedira la instalacion, es desición del
+                        usuario proceder. Se suguiere para el correcto funcionamiento de la aplicación complir con los
+                        siguientes requisitos mínimos:
                     </p>
                     <ul>
                         <li><b>Sistema operativo:</b> Microsoft Windows 7, 8 o 10</li>
@@ -69,17 +89,30 @@
                         <li><b>Procesador:</b> Intel o AMD x86-64 con soporte de instrucciones AVX2.</li>
                         <li><b>Video:</b> Soporte para OpenGL 3.3 recomendado con 1 GB en GPU.</li>
                     </ul>
-                    
+
                     <p>
                         El procedimeinto de instalacion de la aplicación es el siguiente:
                     </p>
                     <ol>
-                        <li>Localizar el archivo de instalación TankSim.exe, y ejecutarlo en modo administrador. NOTA: Dentro del archivo .rar con los archivos de instalación existe tres folders <i>“for_redistribution”</i>, <i>“for_distribution”</i>  y <i>“for_testing”</i>, el instalador con el ejecutable que incluye el Runtime es el folder <i>“for_redistribution”</i>.  </em> .</li>
-                        <li>Seleccionar la dirección de instalación de la aplicación, la dirección por defecto es <i>“C:\Archivos de programas\”</i> . En caso de colocar una nueva dirección colocar el nombre del folder contenedor que por defecto es <i>“\ESPOCH-IQ\”</i>.</li>
+                        <li>Localizar el archivo de instalación TankSim.exe, y ejecutarlo en modo administrador. NOTA:
+                            Dentro del archivo .rar con los archivos de instalación existe tres folders
+                            <i>“for_redistribution”</i>, <i>“for_distribution”</i> y <i>“for_testing”</i>, el instalador
+                            con el ejecutable que incluye el Runtime es el folder <i>“for_redistribution”</i>. </em> .
+                        </li>
+                        <figure class="doc-diag">
+                            <img src="src/installation_img1.png" alt="Localizacion de folder de sintalacion">
+                            <figcaption>Figura 2. Pantalla principal de la aplicación LevelControlModel</figcaption>
+                        </figure>
+                        <li>Seleccionar la dirección de instalación de la aplicación, la dirección por defecto es
+                            <i>“C:\Archivos de programas\”</i> . En caso de colocar una nueva dirección colocar el
+                            nombre del folder contenedor que por defecto es <i>“\ESPOCH-IQ\”</i>.</li>
                         <li>Instalar el Runtime de MATLAB, es aconsejable instalarlo en la dirección por defecto.</li>
-                        <li>Ejecutar instalación, en caso de que el Runtime esté instalado el proceso pasa la instalación de la aplicación directamente.</li>
-                        <li>Finalizar la instalación. En este punto se puede activar la opción de ejecutar el programa o abrir el archivo Log de instalación.</li>
-                        <li>En el caso de existir un problema en el proceso de instalación se recomienda desinstalar y volver a realizar el procedimiento desde el punto 1.</li>
+                        <li>Ejecutar instalación, en caso de que el Runtime esté instalado el proceso pasa la
+                            instalación de la aplicación directamente.</li>
+                        <li>Finalizar la instalación. En este punto se puede activar la opción de ejecutar el programa o
+                            abrir el archivo Log de instalación.</li>
+                        <li>En el caso de existir un problema en el proceso de instalación se recomienda desinstalar y
+                            volver a realizar el procedimiento desde el punto 1.</li>
                     </ol>
                 </article>
             </section>
@@ -87,14 +120,25 @@
                 <header>Funcionamiento de la aplicación</header>
                 <article>
                     <p>
-                        La aplicación en su conjunto sigue la arquitectura mostrada en la figura YY. Este diagrama muestra como interacciona el usuario con las UI, y a su vez como esta interactúa con otros elementos de la aplicación.
+                        La aplicación en su conjunto sigue la arquitectura mostrada en la figura YY. Este diagrama
+                        muestra como interacciona el usuario con las UI, y a su vez como esta interactúa con otros
+                        elementos de la aplicación.
                     </p>
                     <figure class="doc-diag">
                         <img src="src/app_diag.jpg" alt="Arquitectura de la aplicacion">
-                        <figcaption>Figura 1. Pantalla principal de la aplicación LevelControlModel</figcaption>
+                        <figcaption>Figura 2. Pantalla principal de la aplicación LevelControlModel</figcaption>
                     </figure>
                     <p>
-                        El flujo de la información comienza en el usuario el cual proporciona datos para configurar el caso de simulación. Estos datos se ingresan a través de la UI, mediante campos disponibles en la aplicación. Estos datos se convierten en parámetros con los se configura un modelo de Simulink, que devuelve como resultados los valores de las variables configuradas dentro de cada modelo como salidas. Estas salidas son ordenadas y presentadas en la interface gráfica mediante diagramas o tabas de resultados. El otro flujo de información se da cuando el usuario desea guardar la configuración de un caso en la base de datos de la aplicación. Los registros ingresan como datos que se acumulan o apilan en tablas construidas en archivos de Excel. La aplicación también permite borrar casos; existen casos que están guardados por defecto en la base de datos que no se pueden eliminar.
+                        El flujo de la información comienza en el usuario el cual proporciona datos para configurar el
+                        caso de simulación. Estos datos se ingresan a través de la UI, mediante campos disponibles en la
+                        aplicación. Estos datos se convierten en parámetros con los se configura un modelo de Simulink,
+                        que devuelve como resultados los valores de las variables configuradas dentro de cada modelo
+                        como salidas. Estas salidas son ordenadas y presentadas en la interface gráfica mediante
+                        diagramas o tabas de resultados. El otro flujo de información se da cuando el usuario desea
+                        guardar la configuración de un caso en la base de datos de la aplicación. Los registros ingresan
+                        como datos que se acumulan o apilan en tablas construidas en archivos de Excel. La aplicación
+                        también permite borrar casos; existen casos que están guardados por defecto en la base de datos
+                        que no se pueden eliminar.
                     </p>
                 </article>
             </section>
@@ -102,26 +146,97 @@
                 <header>Interface gráfica de usuario</header>
                 <article>
                     <p>
-                        La interface de la aplicación TankSim, consta de 2 ventanas principales de simulación la primera muestra los controles de configuración y ejecución de la simulación de control de nivel de fluido en un tanque. La segunda por su parte muestra el control de temperatura del mismo tanque. La segunda ventana solo puede ejecutarse solo cuando existan resultados en la aplicación de control de nivel.
+                        La aplicación TankSim, consta de 3 interfaces graficas: LevelControlModelUI,
+                        TemperatureControlModel y HelpViewer. Estas ventanas Se encuentran divididas en varios grupos de
+                        controles divididos en áreas. Estas interfaces gráficas de usuarios fueron desarrolladas usando
+                        App designer de MATLAB. La primera ventana en ejecutarse es la del modelo de control de nivel de
+                        fluido, y tiene las
+                        siguientes secciones.
                     </p>
-                
-                    <p>
-                        Las interfaces gráficas de la aplicación siguen la distribución mostrada en la figura YY. Es una distribución horizontal que tiene dos áreas definidas. Un bloque columna con los controles de configuración del caso de simulación (A) y un segundo bloque columna con los controles que manejan los resultados, configuración de control y base de datos (B).
-                    </p>
+                    <ol>
+                        <li>Control para la selección de los casos de uso del método de control seleccionado.</li>
+                        <li>Tabla de parámetros del modelo, tiene campos editables que permiten visualizar el nombre o
+                            denominación, el valor asignado y las unidades.</li>
+                        <li>Panel de controles varios, en este caso contiene dos diales que definen la apertura inicial
+                            de las válvulas de entrada y salida de líquido del tanque. Si se modifica su posición los
+                            valores de la tabla de parámetros se actualiza al valor asignado. Igualmente, si se modifica
+                            el valor de apertura de las válvulas desde la tabla se actualiza la posición de estos
+                            controles. </li>
+                        <li>Control para la selección del método de control. Existen 5 opciones: Sin control (NOCONT),
+                            Control PID Feedback sobre la válvula de entrada (PIDIN), Control PID Feedback sobre la
+                            válvula de salida (PIDOUT), Control ON/OFF sobre la válvula de entrada (ONOFFIN) y Control
+                            ON/EFF sobre la válvula de salida (ONOFFOUT)</li>
+                        <li>Área de controles de visualización de resultados y base de datos. En esta área se presentan
+                            las gráficas y la tabla de los resultados de la simulación. En este caso existen una gráfica
+                            de nivel de líquido y otra con los valores de las señales de las válvulas (apertura vs
+                            tiempo). </li>
+                        <li>Área de controles de ejecución de simulación. En esta sección se define el tiempo de
+                            simulación inicial y final, y a su vez se puede ejecutar la simulación. Además, se tiene
+                            acceso al instructivo y un botón para cerrar la ventada. </li>
+                        <li>Botón de ejecución de la aplicación de control de temperatura. Solo es ejecutable en cuando
+                            se tiene resultados del modelo de control de nivel. Al momento de presionar este botón
+                            también envía la información que comparten los dos modelos con el fin de modelar el mismo
+                            tanque. </li>
+                    </ol>
                     <figure class="doc-figure">
                         <img src="src/panel_explanation.png" alt="Secciones de la UI de LevelControlModel">
-                        <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
+                        <figcaption>Figura 3. Secciones de la pantalla principal de la aplicación LevelControlModel
+                        </figcaption>
                     </figure>
                     <p>
-                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar datos, ejecutar acciones y mostrar resultados. La primera sección 
+                        Las interfaces gráficas de la aplicación siguen la distribución mostrada en la figura YY. Es una
+                        distribución horizontal que tiene dos áreas definidas. Un bloque columna con los controles de
+                        configuración del caso de simulación (A) y un segundo bloque columna con los controles que
+                        manejan los resultados, configuración de control y base de datos (B).
                     </p>
+                    <ol>
+                        <li>Control de selección de caso de estudio. La aplicación tiene por defecto un cierto número de
+                            casos que se pueden ejecutar al momento de seleccionarlo en la lista que se despliega. En el
+                            caso de agregar un caso nuevo, configurado por el usuario, el nombre del caso asignado
+                            aparecerá en esta lista. </li>
+                        <li>Tabla de parámetros de configuración del modelo, es una tabla similar a la tabla de la
+                            aplicación anterior. </li>
+                        <li>Control de selección de método de control. En este caso se tiene 3 alternativas: Sin control
+                            (NOCONT), control PID sobre la válvula de entrada de vapor (PIDIN) y control ON/OFF sobre la
+                            válvula de entrada de vapor (ONOFFIN). </li>
+                        <li>Área de controles de visualización de resultados y base de datos. En el caso de este modelo
+                            se tiene la gráfica de la temperatura, las señales de control de las válvulas y una tabla de
+                            resultados. </li>
+                        <li>Área de controles de ejecución de la simulación, y funciones varias. Similar a la aplicación
+                            anterior. </li>
+                    </ol>
+                    <figure class="doc-figure">
+                        <img src="src/panel_explanation_temp.png" alt="Secciones de la UI de LevelControlModel">
+                        <figcaption>Figura 4. Secciones de la pantalla principal de la aplicación LevelControlModel
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Desde cualquiera de las aplicaciones anteriores se puede llamar a la ventada de la documentación
+                        de la aplicación llamada HelperViewer. La documentación está hecha en formato web y contiene
+                        varios tópicos que permitirán al usuario las funcionalidades, capacidades y limitaciones de la
+                        aplicación. Así como comprender los aspectos teóricos de los modelos, y algunos casos de
+                        estudio. Esta ventada solo tiene dos áreas:
+                    </p>
+                    <ol>
+                        <li>Barra de navegación o tabla de contenidos. Esta área contiene una lista de los temas que se
+                            describen en la documentación. </li>
+                        <li>Área de presentación de información. En el que se muestra la información, imágenes,
+                            animaciones, etc. </li>
+                    </ol>
+                    <figure class="doc-figure">
+                        <img src="src/panel_explanation_help.png" alt="Secciones de la UI de LevelControlModel">
+                        <figcaption>Figura 4. Secciones de la pantalla principal de la aplicación LevelControlModel
+                        </figcaption>
+                    </figure>
                 </article>
             </section>
             <section class="main-section" id="simulation-process">
                 <header>Proceso de simulación</header>
                 <article>
                     <p>
-                        El proceso de simulación sigue el diagrama mostrado en la figura YY El proceso inicia cuando se ejecuta la UI de control de nivel, que posee cinco modelos con los que se puede trabajar en el control de nivel de fluido. Entre los modelos implementados se encuentran:
+                        El proceso de simulación sigue el diagrama mostrado en la figura YY El proceso inicia cuando se
+                        ejecuta la UI de control de nivel, que posee cinco modelos con los que se puede trabajar en el
+                        control de nivel de fluido. Entre los modelos implementados se encuentran:
                     </p>
                     <p>
                         Para el control de nivel:
@@ -141,9 +256,10 @@
                         <li>Modelo con control PID en la entrada (TemperatureControlModelPIDInput) [PIDIN]</li>
                         <li>Modelo con control ON/OFF en la entrada (TemperatureControlModelOnoffInput) [ONOFFIN]</li>
                     </ul>
-                    <figure class="flow-diag" >
+                    <figure class="flow-diag">
                         <img src="src/flow_diag.jpg" alt="Secciones de la UI de LevelControlModel">
-                        <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel</figcaption>
+                        <figcaption>Figura 2. Secciones de la pantalla principal de la aplicación LevelControlModel
+                        </figcaption>
                     </figure>
                 </article>
             </section>
@@ -151,68 +267,44 @@
                 <header>Control de nivel de fluido</header>
                 <article>
                     <p>
-                        El flujo del proceso empieza con la aplicación LevelControlModelUI, que ejecuta la simulación de los distintos modelos de proceso para el control de nivel de fluido (5 modelos diferentes). El proceso es el siguiente:
+                        El flujo del proceso empieza con la aplicación LevelControlModelUI, que ejecuta la simulación de
+                        los distintos modelos de proceso para el control de nivel de fluido (5 modelos diferentes). El
+                        proceso es el siguiente:
                     </p>
-                    
+
                     <ol>
-                        <li>La aplicación TankSim V1.0 ejecuta la UI LevelControlModelUI y permite al usuario interactuar con los distintos controles y con la base de datos de casos. El usuario selecciona un caso por defecto o guardado, o por el contrario edita los parámetros del modelo y genera un nuevo caso. Los usuarios además deben escoger el tipo de control a aplicar (PIDIN, PIDOUT, ONOFFIN, ONOFFOUT y NOCONT). Luego en el menú dropdown se listan los casos almacenados en la base de datos para ese tipo de control. Seleccionando una de las opciones los parámetros se cargan en la tabla de parámetros. NOTA: Estos parámetros se pueden guardar en la base datos de casos asignándole un nombre (ver Sección Guardar y eliminar casos de estudio).</li>
-                        <li>Cuando el usuario esta seguro de haber configurado de forma adecuada los parámetros del modelo, se presiona el botón SIMULAR, para correr el modelo. El botón procede a bloquearse para no permitir presionar varias veces, para evitar generar un error por doble ejecución del modelo. NOTA: El tiempo que tarde la aplicación en obtener resultados depende de las especificaciones del computador en el que se ejecuta la aplicación. Por lo general suele estar por debajo de los 60 segundos.</li>
-                            <ul>
-                                <li>Cuando el modelo ejecuta la simulación recoge los datos de los controles donde están asignados, construye una estructura params que se pasa como argumento a los distintos modelos de Simulink.</li>
-                                <li>Los modelos de Simulink se ejecutan con los parámetros pasados por la UI, y devuelven una estructura out (simOut), con los resultados de la simulación. Dependiendo del modelo se tiene diferentes estructuras de los resultados.</li>
-                            </ul>
-                            <!-- <table class="doc-table center">
-                                <caption>Tabla de contenido</caption>
-                                <tbody>
-                                    <tr>
-                                        <th>PIDIN</th>
-                                        <th>PIDOUT</th>
-                                        <th>ONOFFIN</th>
-                                        <th>ONOFFOUT</th>
-                                        <th>NOCONT</th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table> -->
+                        <li>La aplicación TankSim V1.0 ejecuta la UI LevelControlModelUI y permite al usuario
+                            interactuar con los distintos controles y con la base de datos de casos. El usuario
+                            selecciona un caso por defecto o guardado, o por el contrario edita los parámetros del
+                            modelo y genera un nuevo caso. Los usuarios además deben escoger el tipo de control a
+                            aplicar (PIDIN, PIDOUT, ONOFFIN, ONOFFOUT y NOCONT). Luego en el menú dropdown se listan los
+                            casos almacenados en la base de datos para ese tipo de control. Seleccionando una de las
+                            opciones los parámetros se cargan en la tabla de parámetros. NOTA: Estos parámetros se
+                            pueden guardar en la base datos de casos asignándole un nombre (ver Sección Guardar y
+                            eliminar casos de estudio).</li>
+                        <li>Cuando el usuario esta seguro de haber configurado de forma adecuada los parámetros del
+                            modelo, se presiona el botón SIMULAR, para correr el modelo. El botón procede a bloquearse
+                            para no permitir presionar varias veces, para evitar generar un error por doble ejecución
+                            del modelo. NOTA: El tiempo que tarde la aplicación en obtener resultados depende de las
+                            especificaciones del computador en el que se ejecuta la aplicación. Por lo general suele
+                            estar por debajo de los 60 segundos.</li>
+                        <ul>
+                            <li>Cuando el modelo ejecuta la simulación recoge los datos de los controles donde están
+                                asignados, construye una estructura params que se pasa como argumento a los distintos
+                                modelos de Simulink.</li>
+                            <li>Los modelos de Simulink se ejecutan con los parámetros pasados por la UI, y devuelven
+                                una estructura out (simOut), con los resultados de la simulación. Dependiendo del modelo
+                                se tiene diferentes estructuras de los resultados.</li>
+                        </ul>
                         <li>Los resultados se grafican en los UIAxes de la aplicación (ver código fuente).</li>
-                        <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener resultados en la UI LevelControlModelUI.</li>
+                        <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un
+                            archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de
+                            temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener
+                            resultados en la UI LevelControlModelUI.</li>
                     </ol>
                     <p>
-                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar datos, ejecutar acciones y mostrar resultados. La primera sección 
+                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar
+                        datos, ejecutar acciones y mostrar resultados. La primera sección
                     </p>
                 </article>
             </section>
@@ -220,97 +312,301 @@
                 <header>Control de temperatura</header>
                 <article>
                     <ol>
-                        <li>Con los resultados obtenidos del control de nivel de fluido se puede continuar con la aplicación de control de temperatura. Para ejecutar la aplicación de control de temperatura se usa el botón “Modelo Temperatura >>>”. Este botón migra los parámetros compartidos entre los dos modelos y ejecuta la UI TemperatureControlModelUI.</li>
-                        <li>Cuando la UI se ejecuta el usuario tiene las mismas funcionalidades que con la aplicación de control de nivel: configuración de parámetros de modelo, ejecución de casos de estudio y base de datos para casos de estudio. </li> 
-                        <li>Cuando los parámetros se encuentran configurados de tal forma que refleje las intenciones del usuario, este puede guardar el caso o ejecutarlo.</li>
-                        <!-- <table class="doc-table center">
-                            <caption>Tabla de contenido</caption>
-                            <tbody>
-                                <tr>
-                                    <th>NOCONT</th>
-                                    <th>PIDIN</th>
-                                    <th>ONOFFIN</th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table> -->
+                        <li>Con los resultados obtenidos del control de nivel de fluido se puede continuar con la
+                            aplicación de control de temperatura. Para ejecutar la aplicación de control de temperatura
+                            se usa el botón “Modelo Temperatura >>>”. Este botón migra los parámetros compartidos entre
+                            los dos modelos y ejecuta la UI TemperatureControlModelUI.</li>
+                        <li>Cuando la UI se ejecuta el usuario tiene las mismas funcionalidades que con la aplicación de
+                            control de nivel: configuración de parámetros de modelo, ejecución de casos de estudio y
+                            base de datos para casos de estudio. </li>
+                        <li>Cuando los parámetros se encuentran configurados de tal forma que refleje las intenciones
+                            del usuario, este puede guardar el caso o ejecutarlo.</li>
                         <li>Los resultados se grafican en los UIAxe de la aplicación (ver código fuente).</li>
-                        <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener resultados en la UI LevelControlModelUI.</li>
+                        <li>Con los resultados generados y guardados, se puede: 1) Guardar los resultados como un
+                            archivo Excel, o 2) se puede migrar los parámetros compartidos con el modelo de control de
+                            temperatura. NOTA: no se puede ejecutar la UI TemperatureControlModelUI, sin tener
+                            resultados en la UI LevelControlModelUI.</li>
                     </ol>
                     <p>
-                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar datos, ejecutar acciones y mostrar resultados. La primera sección 
+                        Ambos bloques columnas tienen varias secciones donde se colocan controles que permiten ingresar
+                        datos, ejecutar acciones y mostrar resultados. La primera sección
                     </p>
                 </article>
             </section>
             <section class="main-section" id="study-cases">
                 <header>Casos de estudio</header>
                 <article>
-                   <ul>
+                    <ul>
                         <li>Control de nivel de fluido</li>
-                            <h4>Caso de estudio 1 – Control de nivel de fluido [NOCONT]</h4>
-                            <p>A un tanque cilíndrico de 8 metros cúbicos que almacena una solución salida, se le instalan dos válvulas con coeficientes de flujo de 86 m3/h bar en la entrada y 53 m3/h bar en la salida. El tanque funciona correctamente hasta que un fallo en la válvula de entrada genera una perturbación que lo saca del estado estacionario. El tanque no tiene sistema de control, pero se encontraba ajustado manualmente para mantener el nivel de fluido constante.</p>
-                            <h5>Tiempo de simulación:</h5>
-                            <p>Se desea simular el proceso para un tiempo de 12 horas.</p>
-                            <h5>Perturbación:</h5>
-                            <p>La válvula de entrada se encontraba abierta en un 60% de su apertura total al inicio del proceso. Pero a partir del tiempo 6 horas, la válvula sufre una avería que hace que se abra y cierre en un 17% desde su valor inicial. El periodo del pulso generado es de 0.5 horas con un ancho de flujo del 50%.</p>
-                            <h5>Acción de control: </h5>
-                            <p>El operario encargado del tanque intenta controlar el nivel de fluido de forma manual abriendo la válvula de salida del tanque 0.05 horas después de que la válvula de entrada sufra la avería. Abre la válvula desde un 30% hasta un 40%, intentando igualar el movimiento de la apertura de la válvula de entrada. El resultado es un pulso de 0.52 horas con un ancho de pulso de 50%.</p>
-                            <p>Con los datos indicados determine los siguientes literales:</p>
-                            <ol>
-                                <li>Obtenga los resultados dinámicos del nivel de fluido dentro del tanque.</li>
-                                <li>¿El proceso está bajo control o existe un desbordamiento tomando en cuenta que el tanque tiene una altura de 4,5 metros?</li>
-                                <li>¿Es correcta la acción de control realizada por el operador?</li>
-                                <li>¿Es controlable el proceso?</li>
-                            </ol>
+                        <h4>Caso de estudio 1 – Control de nivel de fluido [NOCONT]</h4>
+                        <p>A un tanque cilíndrico de 8 metros cúbicos que almacena una solución salida, se le instalan
+                            dos válvulas con coeficientes de flujo de 86 m3/h bar en la entrada y 53 m3/h bar en la
+                            salida. El tanque funciona correctamente hasta que un fallo en la válvula de entrada genera
+                            una perturbación que lo saca del estado estacionario. El tanque no tiene sistema de control,
+                            pero se encontraba ajustado manualmente para mantener el nivel de fluido constante.</p>
+                        <h5>Tiempo de simulación:</h5>
+                        <p>Se desea simular el proceso para un tiempo de 12 horas.</p>
+                        <h5>Perturbación:</h5>
+                        <p>La válvula de entrada se encontraba abierta en un 60% de su apertura total al inicio del
+                            proceso. Pero a partir del tiempo 6 horas, la válvula sufre una avería que hace que se abra
+                            y cierre en un 17% desde su valor inicial. El periodo del pulso generado es de 0.5 horas con
+                            un ancho de flujo del 50%.</p>
+                        <h5>Acción de control: </h5>
+                        <p>El operario encargado del tanque intenta controlar el nivel de fluido de forma manual
+                            abriendo la válvula de salida del tanque 0.05 horas después de que la válvula de entrada
+                            sufra la avería. Abre la válvula desde un 30% hasta un 40%, intentando igualar el movimiento
+                            de la apertura de la válvula de entrada. El resultado es un pulso de 0.52 horas con un ancho
+                            de pulso de 50%.</p>
+                        <p>Con los datos indicados determine los siguientes literales:</p>
+                        <ol>
+                            <li>Obtenga los resultados dinámicos del nivel de fluido dentro del tanque.</li>
+                            <li>¿El proceso está bajo control o existe un desbordamiento tomando en cuenta que el tanque
+                                tiene una altura de 4,5 metros?</li>
+                            <li>¿Es correcta la acción de control realizada por el operador?</li>
+                            <li>¿Es controlable el proceso?</li>
+                        </ol>
 
-                            <h4>Caso de estudio 2 – Control de nivel de fluido [PIDOUT]</h4>
-                            <p>Como consecuencia del fallo en el tanque del caso de estudio 1 de nivel de fluido, se decide instalar un sistema de control PID, con acción de control sobre la válvula de salida del tanque. La válvula de control instalada tiene el mismo coeficiente de flujo (53 m m3/h) y se instala una válvula de entrada con el mismo coeficiente. El ajuste del controlador PID, tiene las siguientes constantes:</p>
-                            <p>Durante la prueba del controlador se manipulo apertura de la válvula de entrada bajo las mismas condiciones del pulso anterior (falla).</p>
-                            <h5>Tiempo de simulación:</h5>
-                            <p>Se desea simular el proceso para un tiempo de 12 horas.</p>
-                            <h5>Perturbación:</h5>
-                            <p>Se repite la perturbación de fallo del caso 1.</p>
-                            <h5>Acción de control:</h5>
-                            <p>Ajustado por el controlador PID.</p>
-                            <p>Con los datos indicados determine los siguientes literales:</p>
-                            <ol>
-                                <li>Obtenga los resultados dinámicos del nivel de fluido dentro del tanque.</li>
-                                <li>¿El proceso está bajo control o existe un desbordamiento tomando en cuenta que el tanque tiene una altura de 4,5 metros?</li>
-                                <li>¿Controla correctamente el nivel de fluido el controlador PID?</li>
-                            </ol>
+                        <h4>Caso de estudio 2 – Control de nivel de fluido [PIDOUT]</h4>
+                        <p>Como consecuencia del fallo en el tanque del caso de estudio 1 de nivel de fluido, se decide
+                            instalar un sistema de control PID, con acción de control sobre la válvula de salida del
+                            tanque. La válvula de control instalada tiene el mismo coeficiente de flujo (53 m m3/h) y se
+                            instala una válvula de entrada con el mismo coeficiente. El ajuste del controlador PID,
+                            tiene las siguientes constantes:</p>
+                        <p>Durante la prueba del controlador se manipulo apertura de la válvula de entrada bajo las
+                            mismas condiciones del pulso anterior (falla).</p>
+                        <h5>Tiempo de simulación:</h5>
+                        <p>Se desea simular el proceso para un tiempo de 12 horas.</p>
+                        <h5>Perturbación:</h5>
+                        <p>Se repite la perturbación de fallo del caso 1.</p>
+                        <h5>Acción de control:</h5>
+                        <p>Ajustado por el controlador PID.</p>
+                        <p>Con los datos indicados determine los siguientes literales:</p>
+                        <ol>
+                            <li>Obtenga los resultados dinámicos del nivel de fluido dentro del tanque.</li>
+                            <li>¿El proceso está bajo control o existe un desbordamiento tomando en cuenta que el tanque
+                                tiene una altura de 4,5 metros?</li>
+                            <li>¿Controla correctamente el nivel de fluido el controlador PID?</li>
+                        </ol>
 
-                            <h4>Caso de estudio 3 – Control de nivel de fluido [PIDIN]</h4>
-                            <h4>Caso de estudio 4 – Control de nivel de fluido [ONOFFIN]</h4>
-                            <h4>Caso de estudio 5 – Control de nivel de fluido [ONOFFOUT]</h4>
+                        <h4>Caso de estudio 3 – Control de nivel de fluido [PIDIN]</h4>
+                        <p>
+                            La empresa XCompany S.A desea automatizar sus tanques de depósito con un solvente que usan
+                            en su proceso de fabricación. El tanque que almacena esta sustancia tiene un diámetro de 2.8
+                            metros y una altura de 4.5 metros. El volumen utilizable del tanque es del 90%, y el volumen
+                            mínimo de operación es del 15%.
+                        </p>
+                        <p>
+                            Como respuesta a la licitación de la empresa XCompany S.A, YControlCompany S.A propone
+                            aplicar un control sobre la valvula de entrada al tanque (PID IN). Propone instalar los
+                            siguientes dispositivos:
+                        </p>
+                        <ul>
+                            <li>1 válvula de compuerta con accionador neumático con un coeficiente de flujo de 125 m3/h
+                                bar, para instalarla en la entrada. </li>
+                            <li>1 válvula de compuerta de acción manual, con un coeficiente de flujo de 85 m3/h bar,
+                                para instalarla en la salida. </li>
+                            <li>1 controlador PID de tipo ideal, con coeficientes: Kp = , Ki =, Kd = y n = . </li>
+                        </ul>
+                        <p>
+                            El periodo propuesto para la evaluación de la propuesta es de 72 horas, y se le aplicara una
+                            perturbación en la válvula de salida de tipo pulso durante este periodo de tiempo. El pulso
+                            de salida tiene los siguientes parámetros:
+                        </p>
+                        <ul>
+                            <li>Límite inferior: 25%</li>
+                            <li>Amplitud: 7%</li>
+                            <li>Ancho: 43%</li>
+                            <li>Periodo 2.5 horas</li>
+                            <li>Retraso: 0 horas</li>
+                        </ul>
+                        <p>
+                            El nivel inicial de líquido en el tanque es de 1.5 metros, y el setpoint es 3.8 metros
+                            durante toda la prueba.
+                        </p>
+                        <p>En base a los datos provistos anteriormente determinar: </p>
+                        <ol>
+                            <li>Obtenga los resultados dinámicos del nivel de fluido dentro del tanque.</li>
+                            <li>¿La propuesta de la empresa YControlCompany S.A. cumple el objetivo planteado?</li>
+                            <li>¿Si la propuesta no funciona cual sería el cambio que se debería realizar para que
+                                funcione?</li>
+                            <li>¿Cuál sería su propuesta de control PID IN?</li>
+                        </ol>
+
+                        <h4>Caso de estudio 4 – Control de nivel de fluido [ONOFFIN]</h4>
+                        <p>Una empresa de alimentos XGreatFoodCompany S.A, tiene un problema para controlar el nivel de
+                            sirope en el tanque de almacenamiento. La empresa llego a la resolución que, por las
+                            características del proceso y los costos, no requiere aplicar un control PID. Entonces
+                            deciden aplicar un control de tipo ON/OFF en la válvula de entrada del tanque. </p>
+
+                        <p>Los elementos de control seleccionados son: </p>
+                        <ul>
+                            <li>1 válvula de control de compuerta de acción hidráulica, cerrada al fallo. El coeficiente
+                                de flujo es 143.25 m3/h bar. </li>
+                            <li>1 válvula manual de compuerta, con un coeficiente de flujo de 25.23 m3/h bar. </li>
+                            <li>Controlador ON/OFF analógico de Minilec WLCD1 Liquid Level Controllers, con rango
+                                superior e inferior de nivel. </li>
+                        </ul>
+                        <p>Para probar el sistema se aplica una prueba de 6 horas con una variación de apertura (pulso)
+                            de la válvula de salida. Los parámetros de esta perturbación son: </p>
+                        <ul>
+                            <li>Límite inferior: 32%</li>
+                            <li>Amplitud: 12%</li>
+                            <li>Ancho: 0.62%</li>
+                            <li>Periodo 1.2 horas</li>
+                            <li>Retraso: 0.25 horas</li>
+                        </ul>
+                        <p>Las dimensiones son: </p>
+                        <ul>
+                            <li>Volumen útil: 18430 L</li>
+                            <li>Factor de seguridad de llenado: 10%</li>
+                            <li>Altura del tanque 8 m</li>
+                        </ul>
+                        <p>En base a los datos provistos anteriormente determinar: </p>
+                        <ol>
+                            <li>Obtenga los resultados dinámicos del nivel de fluido, resultado de la propuesta
+                                planteada.</li>
+                            <li>¿La propuesta cumple el objetivo planteado?</li>
+                        </ol>
+
+                        <h4>Caso de estudio 5 – Control de nivel de fluido [ONOFFOUT]</h4>
+                        <p>
+                            Durante un turno de proceso un operador recibe ordenes de cambiar el setpoint de un
+                            controlador ON/OFF de nivel de fluido de un tanque que almacena agua residual de los
+                            intercambiadores de calor de una planta. Este tanque debe mantenerse por debajo del 85% de
+                            su capacidad total y sobre el 20%. El nuevo setpoint es 4.3 m con una tolerancia de 0.2 m.
+                            La válvula de entrada tiene un coeficiente de flujo de 53 m3/h bar y una apertura inicial de
+                            0.3, mientras la válvula de salida tiene un coeficiente de 212 m3/h bar con una apertura
+                            inicial del 0.4. A parte, el tanque tiene un volumen total de 20 mil litros y un diámetro de
+                            3.2 metros.
+                        </p>
+                        <p>Con los datos proporcionados anteriormente determine: </p>
+                        <ol>
+                            <li>Obtener los datos dinamicos de nivel de fluido en el tanque para un tiempo de 24 horas.
+                            </li>
+                            <li>Determinar si el nuevo set point no genera ningun desborde en el tanque.</li>
+                            <li>Determinar si la válvula de salida es suficientemente grande para permitir el control
+                                del proceso.</li>
+                            <li>Determinar si la válvula de entrada tiene un coeficiente de flujo adecuado para el
+                                control del proceso. </li>
+                        </ol>
+
                         <li>Control de temperatura</li>
-                            <h4>Caso de estudio 1 – Control de temperatura de fluido [NOCONT]</h4>
-                            <h4>Caso de estudio 3 – Control de temperatura de fluido [PIDIN]</h4>
-                            <h4>Caso de estudio 4 – Control de temperatura de fluido [ONOFFIN]</h4>
-                   </ul>
+                        <h4>Caso de estudio 1 – Control de temperatura de fluido [NOCONT]</h4>
+                        <p>
+                            Un tanque de 10000 litros con una capacidad útil del 92%, tiene que calienta una solución
+                            desde una temperatura inicial de 43°C a 62°C. El flujo de entrada al proceso varia con el
+                            tiempo en forma de un pulso con los siguientes parámetros:
+                        </p>
+                        <ul>
+                            <li>Límite inferior: 0.12 m3/h</li>
+                            <li>Amplitud: 0.05 m3/h</li>
+                            <li>Ancho: 50%</li>
+                            <li>Periodo: 1.35 horas</li>
+                            <li>Retraso: 0 horas</li>
+                        </ul>
+                        <p>
+                            El operador con el fin de mantener la temperatura del tanque en 62°C, manipula la válvula de
+                            entrada de vapor a la chaqueta formando de igual manera un pulso con los siguientes
+                            parámetros:
+                        </p>
+                        <ul>
+                            <li>Límite inferior: 0.35</li>
+                            <li>Amplitud: 0.12</li>
+                            <li>Ancho: 52%</li>
+                            <li>Periodo: 1.36 horas</li>
+                            <li>Retraso: 0.12 horas</li>
+                        </ul>
+                        <p>Con los datos anteriormente mencionados determine: </p>
+                        <ol>
+                            <li>Los datos dinámicos de la temperatura en función del tiempo, y las señales de control.
+                            </li>
+                            <li>Determine si las acciones realizadas por el operario permiten mantener la temperatura de
+                                62°C.
+                            </li>
+                            <li>Es oportuna la respuesta del operador al momento de una variación de la temperatura
+                                (demora).
+                            </li>
+                        </ol>
+
+                        <h4>Caso de estudio 3 – Control de temperatura de fluido [PIDIN]</h4>
+                        <p>
+                            A un tanque que almacena una solución con propiedades iguales a las del agua, se desea
+                            calentar hasta una temperatura de 70°C, como paso previo a su mezclado con otras sustancias
+                            dentro de un reactor. El calentamiento de la solución se realiza mediante vapor a través de
+                            una chaqueta. La solución de entrada al tanque está a temperatura normal (25°C) y flujo
+                            masico de 0.14 m3/h. Aparte la capacidad del tanque es de 22 m3 con una altura total de 15m,
+                            y una capacidad efectiva de 87% del volumen total.
+                        </p>
+                        <p>
+                            El sistema de control que tiene el tanque es un PID colocado en la válvula de entrada del
+                            tanque. La válvula de entrada a la chaqueta es una válvula de mariposa accionada por un
+                            servomotor y un coeficiente de flujo de 430.2 m3/h bar. Por otra parte, la válvula de
+                            alimentación del tanque es una válvula de compuerta manual con coeficiente de flujo 430.2
+                            m3/h bar.
+                        </p>
+                        <p>
+                            El ciclo de control del tanque es un PID feedback sobre la línea de entrada al tanque. El
+                            controlador PID tiene la siguiente configuración de constantes:
+                        </p>
+
+                        <p>
+                            Se quiere simular un fallo en proceso sobre la válvula de entrada al tanque haciendo que
+                            esta se abra y cierre entre el 0 a 65%, en forma de un pulso con los siguientes parámetros:
+                        </p>
+                        <ul>
+                            <li>Límite inferior: 0 </li>
+                            <li>Amplitud: 0.65</li>
+                            <li>Ancho: 41%</li>
+                            <li>Periodo: 0.75 horas</li>
+                            <li>Retraso: 0.12 horas</li>
+                        </ul>
+                        <p>
+                            Describa con datos que resultados se obtiene en la simulación, tomando en cuenta los
+                            siguientes puntos:
+                        </p>
+                        <ol>
+                            <li>
+                                Capacidad de control del sistema PID FeedBack.
+                            </li>
+                            <li>Temperatura de la solución resultante.
+                            </li>
+                            <li>Acción de la válvula de control sobre la temperatura del proceso.
+                            </li>
+                            <li>Interpretación de las gráficas de temperatura, señales de control y temperatura.</li>
+                        </ol>
+
+                        <h4>Caso de estudio 4 – Control de temperatura de fluido [ONOFFIN]</h4>
+                        <p>
+                            La empresa de alimentos XGreatFoodCompay S.A. desea realizar un estudio comparativo entre
+                            dos tanques de calentamiento para una solución de trabajo importante para su proceso de
+                            manufactura. Estos dos tanques provienen de XEquipmentSupplier S.A. y YEquipmentSupplier
+                            S.A, y sus datos técnicos son los siguientes:
+                        </p>
+                        <p>
+                            Uno de los requerimientos hechos por la empresa XGreatFoodCompany S.A, es que los tanque
+                            tengan un control de nivel de líquido mediante un controlador ON/OFF conectado a la válvula
+                            de entrada de vapor. Este controlador debe permitir ingresar un setpoint y una tolerancia.
+                        </p>
+                        <p>La empresa también proporciona ciertos datos operativos como: </p>
+                        <ol>
+                            <li>
+                                Temperatura del flujo de entrada al tanque: 27°C
+                            </li>
+                            <li>Temperatura operativa del tanque: 58°C
+                            </li>
+                            <li>Margen de error deseado para el control: +-2°C
+                            </li>
+                            <li>Capacidad útil del tanque mínima: 25400 L </li>
+                            <li>Margen mínimo de volumen en el tanque: 12% </li>
+                        </ol>
+                        <p>Con los datos proporcionados determinar: </p>
+                        <ol>
+                            <li>
+                                ¿Cuál de las dos opciones de tanque de calentamiento debe comprar la empresa
+                                XGreatFoodCompany S.A?
+                            </li>
+                        </ol>
+                    </ul>
                 </article>
             </section>
             <section class="main-section" id="section-ref">
@@ -334,4 +630,5 @@
     </main>
 
 </body>
+
 </html>
